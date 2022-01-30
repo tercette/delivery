@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TesteComponent } from './teste.component';
-import { TesteRoutingModule } from './teste.routing';
+import { HeaderComponent } from './header.component';
+import { HeaderRoutingModule } from './header.routing';
 import { AngularModule } from '../shared/angular/angular.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    TesteRoutingModule,
+    HeaderRoutingModule,
     AngularModule
   ],
 
-  declarations: [TesteComponent]
+  declarations: [HeaderComponent]
 })
 export class TesteModule { }
