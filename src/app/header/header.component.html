@@ -7,7 +7,7 @@
       close
     </mat-icon>
   </button>
-  Responsive side navigation
+  Auto atendimento
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -34,7 +34,7 @@
 
   </mat-sidenav>
   <mat-sidenav-content>
-    <div class="content mat-elevation-z8">
+    <div class="content mat-elevation-z8" [ngClass]="{'close-menu': openMenu}">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

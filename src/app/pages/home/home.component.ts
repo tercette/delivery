@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-teste',
-  templateUrl: './teste.component.html',
-  styleUrls: ['./teste.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class TesteComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   tiles: Tile[] = [
     { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
@@ -20,7 +20,6 @@ export class TesteComponent implements OnInit {
   }
 
 }
-
 
 export interface Tile {
   color: string;

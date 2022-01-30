@@ -12,6 +12,8 @@ export class HeaderComponent implements AfterViewInit {
 
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
 
+  openMenu: boolean = false;
+
   constructor(private observer: BreakpointObserver) { }
 
   ngAfterViewInit() {
@@ -20,11 +22,13 @@ export class HeaderComponent implements AfterViewInit {
         if (res.matches) {
           this.sidenav.mode = 'over';
           this.sidenav.close();
+          this.openMenu = false;
         } else {
           this.sidenav.mode = 'side';
           this.sidenav.open();
+          this.openMenu = true;
         }
       });
-    },0)
+    }, 0)
   }
 }
