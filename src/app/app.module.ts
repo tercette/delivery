@@ -7,6 +7,11 @@ import { AngularModule } from './shared/angular/angular.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { LOCALE_ID } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePt)
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +24,10 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     AngularModule,
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: "pt-BR"
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

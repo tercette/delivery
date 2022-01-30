@@ -1,0 +1,6 @@
+<mat-tab-group dynamicHeight>
+  <mat-tab label="{{item?.name}}" *ngFor="let item of listTabs">
+    <!-- <mat-slide-toggle></mat-slide-toggle> -->
+    <app-cards></app-cards>
+  </mat-tab>
+</mat-tab-group>
