@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TabsService } from './tabs.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,30 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsComponent implements OnInit {
 
-  listTabs = [
-    {
-      name: 'Pratos frios 2',
-      status: false
-    },
-    {
-      name: 'Pratos quentes',
-      status: true
-    },
-    {
-      name: 'Bebidas',
-      status: true
-    },
-    {
-      name: 'Sobremesas',
-      status: true
-    },
-  ]
+  listTabs: any[] = [];
 
-  constructor() {
-    this.listTabs = this.listTabs.filter(el => el.status)
-  }
+  constructor(private tabsService: TabsService) { }
 
   ngOnInit() {
+    this.tabsService.getTabs().subscribe(list => {
+      this.listTabs = list;
+    }, err => {
+      console.log(err)
+    })
   }
 
 }

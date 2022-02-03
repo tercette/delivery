@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home.routing';
 import { AngularModule } from '../../shared/angular/angular.module';
 import { CardsComponent } from './cards/cards.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { TabsService } from './tabs/tabs.service';
 
 @NgModule({
   imports: [
@@ -17,6 +18,8 @@ import { TabsComponent } from './tabs/tabs.component';
     CardsComponent,
     TabsComponent
   ],
-  providers: []
+  providers: [
+    TabsService
+  ]
 })
 export class HomeModule { }

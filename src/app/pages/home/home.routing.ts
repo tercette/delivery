@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
-  }
+  },
+  {
+    path: 'register-order',
+    loadChildren: () => import('./register-order/register-order.module').then((m) => m.RegisterOrderModule),
+  },
 ];
 
 @NgModule({

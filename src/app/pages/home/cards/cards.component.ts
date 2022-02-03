@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cards',
@@ -7,36 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  cardList: CardsModel[] = [
-    {
-      id: 0,
-      name: 'Hamburguer',
-      img: 'assets/hamburguer.png',
-      value: 19.00,
-      description: 'SUCESSO'
-    },
-    {
-      id: 1,
-      name: 'Pastel',
-      img: 'assets/hamburguer.png',
-      value: 119.50,
-      description: 'SUCESSO'
-    },
-    {
-      id: 2,
-      name: 'Pratos',
-      img: 'assets/hamburguer.png',
-      value: 1.10,
-      description: 'SUCESSO'
-    },
-    {
-      id: 3,
-      name: 'frios',
-      img: 'assets/hamburguer.png',
-      value: 2300.00,
-      description: 'SUCESSO'
-    }
-  ]
+  _cardList: CardsModel[] = [];
+
+  @Input() set cardList(value: CardsModel[]) {
+    this._cardList = value;
+  }
 
   constructor() { }
 

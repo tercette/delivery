@@ -1,6 +1,7 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,37 @@ export class HeaderComponent implements AfterViewInit {
 
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
 
+  menus = [
+    {
+      name: 'Inicial',
+      icon: 'home',
+      url: '/home'
+    },
+    {
+      name: 'Perfil',
+      icon: 'person'
+    },
+    {
+      name: 'Sobre nós',
+      icon: 'info'
+    },
+    {
+      name: 'Ajuda',
+      icon: 'help'
+    },
+    {
+      name: 'Registro',
+      icon: 'add',
+      url: '/home/register-order'
+    },
+  ]
+
   openMenu: boolean = false;
 
-  constructor(private observer: BreakpointObserver) { }
+  constructor(
+    private observer: BreakpointObserver,
+    private router: Router
+  ) { }
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -30,5 +59,9 @@ export class HeaderComponent implements AfterViewInit {
         }
       });
     }, 0)
+  }
+
+  open(item: any) {
+    this.router.navigate([item.url])
   }
 }
