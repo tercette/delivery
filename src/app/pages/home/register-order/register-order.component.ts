@@ -15,5 +15,6 @@ export class RegisterOrderComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }
