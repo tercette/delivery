@@ -6,13 +6,33 @@
       <mat-radio-group>
         <div class="row">
           <div class="col">
-            <mat-radio-button class="example-margin" value="after">Categoria</mat-radio-button>
+            <mat-radio-button (click)="changeForm('after')" class="example-margin" value="after">Categoria</mat-radio-button>
           </div>
           <div class="col">
-            <mat-radio-button class="example-margin" value="before">Nome do prato</mat-radio-button>
+            <mat-radio-button (click)="changeForm('before')" class="example-margin" value="before">Nome do prato</mat-radio-button>
           </div>
         </div>
       </mat-radio-group>
     </section>
   </mat-card-content>
 </mat-card>
+<form [formGroup]="form"  class="example-form">
+  <mat-form-field *ngIf="showForm == 'after'" class="example-full-width" appearance="fill">
+    <mat-label>Categoria</mat-label>
+    <input type="text" matInput formControlName="categoria" placeholder="Ex. entre com uma categoria">
+  </mat-form-field>
+
+  <mat-selection-list #shoes *ngIf="showForm == 'before'">
+    <mat-list-option *ngFor="let shoe of typesOfShoes">
+      {{shoe.name}}
+    </mat-list-option>
+  </mat-selection-list>
+
+
+  <div class="example-button-row">
+    <button (click)="salvar()" mat-raised-button color="warn">Basic</button>
+  </div>
+</form>
+
+
+

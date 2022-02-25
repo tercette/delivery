@@ -23,6 +23,7 @@ registerLocaleData(localePt)
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularModule,
+
   ],
   providers: [{
     provide: LOCALE_ID,
@@ -30,4 +31,6 @@ registerLocaleData(localePt)
   }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+
+}

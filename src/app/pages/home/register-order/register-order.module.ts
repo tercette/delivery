@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RegisterOrderComponent } from './register-order.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularModule } from 'src/app/shared/angular/angular.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TabsService } from '../tabs/tabs.service';
 
 const routes: Routes = [
   {
@@ -15,8 +17,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     AngularModule,
-    RouterModule.forChild(routes)
+    ReactiveFormsModule,
+    RouterModule.forChild(routes),
+
   ],
-  declarations: [RegisterOrderComponent]
+  declarations: [RegisterOrderComponent],
+  providers: [TabsService]
 })
 export class RegisterOrderModule { }
